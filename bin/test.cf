@@ -1,0 +1,90 @@
+int globalInt;
+bool globalBool;
+
+void setInitialValues(int a, bool b)
+{
+    globalInt = 0 + a;
+    globalBool = b && true;
+
+    cout << "Set values of globalInt and globalBool to: ";
+
+    cout << globalInt;    
+    cout << " ";
+    cout << globalBool;
+    cout << "\n";
+}
+
+void testArithmetic()
+{
+	cout << "Testing arithmetic operations: +,-,*,/  If successful, value remains unchanged.\n";
+	globalInt = globalInt + 0;
+	globalInt = globalInt - 0;
+	globalInt = globalInt * 1;
+	globalInt = globalInt / 1;
+
+	cout << globalInt;
+	cout << "\n";
+	return;
+}
+
+void testBoolean()
+{
+	bool b;
+	int x;
+	int y;
+
+	cout << "Testing conditionals and boolean operations: &&,||,!,==,!=,>=,>,<,<=.";
+	cout << " If successful, value remains unchanged.\n";
+
+	globalBool = globalBool && true;
+        globalBool = globalBool || false;
+	globalBool = !globalBool;
+	globalBool = !globalBool;
+
+	if (globalBool)
+	{
+		x = 1;
+		y = 0;
+		globalBool = "hello" == "hello";
+	}	
+	else
+	{
+		x = 0; 
+		y = 1;
+		globalBool = "HELLO" == "hello";
+	}
+
+	if (!globalBool)
+	{
+		globalBool = !globalBool;
+		globalBool = !globalBool;
+	}	
+
+	if (globalBool)
+	{
+		x = x;
+	}
+	else
+	{
+		y = y;
+	}
+
+	globalBool = x <= y;
+	globalBool = x < y;
+	globalBool = x >= y;
+	globalBool = x > y;
+	
+	b = x == y;
+	b = x != y;
+
+	cout << globalBool;
+	cout << "\n";
+	return;
+}
+
+void main()
+{
+	setInitialValues(5,false);
+	testArithmetic();
+	testBoolean();
+}
